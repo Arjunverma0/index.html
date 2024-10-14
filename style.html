@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to WD Workshop!</title>
+    <link rel="icon" type="image/png" href="favicon-32x32.png"/>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(to right, #ff4081, #ffab40);
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            color: #ffffff;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        h2, h3, h4 {
+            text-align: center;
+            margin: 10px 0;
+        }
+        h2 { color: #ff5722; }
+        h3 { color: #673ab7; }
+        h4 { color: #00796b; }
+        p {
+            font-size: 18px;
+            padding: 10px 0;
+            text-align: justify;
+        }
+        .highlight { color: #c62828; font-weight: bold; }
+        .blue-text { color: #3f51b5; font-weight: bold; }
+        hr {
+            border: 2px solid #333;
+            margin: 20px 0;
+        }
+        a {
+            display: inline-block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #00796b;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+        a:hover {
+            color: #004d40;
+            transform: scale(1.05);
+        }
+        .logo {
+            text-align: center;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 2px solid #333;
+            padding: 12px;
+            text-align: left;
+        }
+        th { background-color: #2196f3; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+        tr:hover { background-color: #e1f5fe; }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        .input-field {
+            margin: 15px 0;
+            width: calc(100% - 24px);
+            padding: 10px;
+            border: 2px solid #00796b;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        .input-field:focus {
+            border-color: #ff4081;
+            outline: none;
+        }
+        .button {
+            display: inline-block;
+            background-color: #ff4081;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #e91e63;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to WD Workshop!</h1>
+    </header>
+    <main class="container">
+        <h2>ARJUN VERMA</h2>
+        <h3>BTECH IT-A</h3>
+        <h4>2300320130064</h4>
+        
+        <p class="highlight">
+            My name is Arjun Verma and I am from Muzaffarnagar, Uttar Pradesh. I am currently
+            pursuing my B-TECH from ABES Engineering College, Ghaziabad and a BS degree from IIT Madras.
+        </p>
+        
+        <p class="blue-text">
+            In my Web Designing Workshop, I am currently learning HTML and I will continue to improve my web designing skills.
+        </p>
+        
+        <hr>
+        
+        <a href="https://abes.ac.in" target="_blank">Link to college's website</a>
+        
+        <div class="logo">
+            <a href="https://abes.ac.in" target="_blank">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqDUKqMO5_0Brt7BtAz0FMgDsPjWK2GqHXyQ&s" alt="ABES Logo" height="80">
+            </a>
+        </div>
+        
+        <form id="participantForm">
+            <input type="text" class="input-field" id="name" placeholder="Your Name" required>
+            <input type="text" class="input-field" id="contact" placeholder="Your Contact" required>
+            <input type="text" class="input-field" id="course" placeholder="Your Course" required>
+            <button type="submit" class="button">Add Participant</button>
+        </form>
+        
+        <table id="participantTable">
+            <caption>Workshop Participants</caption>
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Course</th>
+            </tr>
+            
+        </table>
+    </main>
+    <footer>
+        &copy; 2024 Arjun Verma. All rights reserved.
+    </footer>
+
+    <script>
+        document.getElementById('participantForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const contact = document.getElementById('contact').value;
+            const course = document.getElementById('course').value;
+
+            const table = document.getElementById('participantTable');
+            const newRow = table.insertRow(-1);
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            const cell3 = newRow.insertCell(2);
+            const cell4 = newRow.insertCell(3);
+
+            cell1.innerHTML = table.rows.length - 1; // S.No
+            cell2.innerHTML = name; // Name
+            cell3.innerHTML = contact; // Contact
+            cell4.innerHTML = course; // Course
+
+            // Clear input fields
+            document.getElementById('participantForm').reset();
+        });
+    </script>
+</body>
+</html>
